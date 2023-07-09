@@ -1,0 +1,14 @@
+.login_page {
+  height: 100vh;
+  width: 100vw;
+}
+
+.backimg_container{
+    max-width: 100vw;
+    height: 100vh;
+}
+
+.backgroundImg {
+  width: 100%;
+  height: 26.3rem
+}
