@@ -1,27 +1,30 @@
 import { useEffect, useState } from "react";
-import styles from "./../../styles/login-form.module.css";
+import styles from "./../../styles/login.module.css";
 import Input from "./Input";
 import Button from "./Button";
 import { colors } from "../../constants/colors";
 
 export default function LoginForm() {
+
+  // use states
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [passwordError, setPasswordError] = useState(false);
 
-
+  // handle sign in
   const handleSignin = () => {
     if (email === "") {
       setEmailError(true);
       setErrorMessage("The email field is required");
-    }  else if (password === "") {
+    } else if (password === "") {
       setPasswordError(true);
       setErrorMessage("The password field is required");
     }
-  }
+  };
 
+  // useEffect
   useEffect(() => {
     if (email !== "") {
       setEmailError(false);
@@ -30,12 +33,6 @@ export default function LoginForm() {
       setPasswordError(false);
     }
   }, [email, password]);
-
-
-
-
-
- 
 
   return (
     <div className={[styles.login_container].join(" ")}>
@@ -59,33 +56,52 @@ export default function LoginForm() {
           />
         </div>
         {/* FORM */}
-        <div >
+        <div>
           <div className={styles.input_container}>
-          <Input
-            type="text"
-            placeholder="Email"
-            setValue={setEmail}
-            error={emailError}
-            errorMessage={errorMessage}
-          />
-          <Input
-            type="password"
-            placeholder="Password"
-            setValue={setPassword}
-            error={passwordError}
-            errorMessage={errorMessage}
-          />
+            <Input
+              type="text"
+              placeholder="Email"
+              setValue={setEmail}
+              error={emailError}
+              errorMessage={errorMessage}
+            />
+            <Input
+              type="password"
+              placeholder="Password"
+              setValue={setPassword}
+              error={passwordError}
+              errorMessage={errorMessage}
+            />
           </div>
-          <Button text="Sign In" styles={{ borderRadius: "40px",margin:'2.4rem 0 1.6rem 0' }} onClick={handleSignin} />
+          {/* SIGN IN BUTTON */}
+          <Button
+            text="Sign In"
+            styles={{ borderRadius: "40px", margin: "2.4rem 0 1.6rem 0" }}
+            onClick={handleSignin}
+          />
           {/* FORGOT PASSWORD? */}
-          <div style={{display:'flex', justifyContent:'space-between'}}>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
             <p className={styles.forgot_password}>Forgot Password?</p>
             <p className={styles.sign_up}>New User? Sign Up</p>
           </div>
           <p className={styles.or}>or</p>
           {/* SOCIAL MEDIA BUTTONS */}
-          <Button text="CONTINUE WITH GOOGLE" styles={{backgroundColor:colors.bluelight, font:"normal normal 600 1.4rem/1.8rem Josefin Sans"}} startIcon={require('../../assets/Group_9.png')}/>
-          <Button text="CONTINUE WITH FACEBOOK" styles={{backgroundColor:colors.blue,font:"normal normal 600 1.4rem/1.8rem Josefin Sans"}} startIcon={require('../../assets/Rectangle_17.png')}/>
+          <Button
+            text="CONTINUE WITH GOOGLE"
+            styles={{
+              backgroundColor: colors.bluelight,
+              font: "normal normal 600 1.4rem/1.8rem Josefin Sans",
+            }}
+            startIcon={require("../../assets/Group_9.png")}
+          />
+          <Button
+            text="CONTINUE WITH FACEBOOK"
+            styles={{
+              backgroundColor: colors.blue,
+              font: "normal normal 600 1.4rem/1.8rem Josefin Sans",
+            }}
+            startIcon={require("../../assets/Rectangle_17.png")}
+          />
         </div>
       </div>
     </div>

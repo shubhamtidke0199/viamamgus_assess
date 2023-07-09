@@ -41,6 +41,8 @@ export default function Video() {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        backgroundColor:'#f9edcc',
+        height: "100vh",
       }}
     >
       <h1>Video</h1>

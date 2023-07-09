@@ -1,6 +1,7 @@
+
 import { colors } from "@mui/material";
-import styles from "./../../styles/login-form.module.css";
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import styles from "./../../styles/login.module.css";
+import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 
 export default function Input(props) {
   return (
@@ -15,7 +16,7 @@ export default function Input(props) {
       {/* ERROR MESSAGE */}
       {props.error && (
           <div className={styles.error_container}>
-        <RemoveCircleOutlineIcon style={{color:'red'}}/>
+        <RemoveCircleIcon style={{color:colors.red, fontSize:'1.6rem'}}/>
         <span>{props.errorMessage}</span>
       </div>
         )
