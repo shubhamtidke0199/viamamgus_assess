@@ -11,5 +11,7 @@ For the second page, i.e the Video page, the route is: http://localhost:3000/vid
 For the third page, i.e the Date page, the route is: http://localhost:3000/date
 
 Login - /
+
 Video - /video
+
 Date - /date
