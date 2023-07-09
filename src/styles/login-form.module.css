@@ -1,7 +1,7 @@
 .login_container {
   text-align: center;
   /* max-width: 57.7rem; */
-  max-width: 100vw;
+  /* max-width: 100vw; */
   position: absolute;
   top: 8rem;
   left: 50%;
@@ -12,7 +12,7 @@
 
 .header {
   box-shadow: 0px 3px 7px #00000029;
-  width: 100%;
+  /* width: 100%; */
   /* background-color: aquamarine; */
 }
 
@@ -30,7 +30,7 @@
 
 .image_container {
   /* margin-bottom: 2.4rem; */
-  max-width: 80vw;
+  /* max-width: 80vw; */
 }
 
 .tree_img {
@@ -99,7 +99,6 @@
   .form_container {
     padding: 0 2.4rem;
   }
-
 
 
   .image_container {

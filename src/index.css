@@ -35,4 +35,12 @@ p{
   margin:0;
 }
 
+.moreVideos{
+  display: flex;
+}
+
+.moreVideos:hover{
+  display: none;
+}
+
 
