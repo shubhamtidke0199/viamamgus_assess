@@ -55,7 +55,7 @@ export default function LoginForm() {
           <img
             src={require("../../assets/Rectangle_4.png")}
             alt="Rectangle_4"
-            className={styles.backgroundImg}
+            className={styles.tree_img}
           />
         </div>
         {/* FORM */}
