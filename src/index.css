@@ -1,46 +1,44 @@
-html{
+html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  padding:0;
+  padding: 0;
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
-    font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-    /* font-family: 'Josefin Sans', sans-serif; */
+  /* font-family: 'Josefin Sans', sans-serif; */
 }
 
 :root {
-  --green:#20B716;
-  --error:#EE2D6E;
-  --red:#D9185F;
-  --black:#000000;
-  --white:#FFFFFF;
-  --blue:#1877F2;
-  --blue-light:#4285F4;
-  --gray:#E2E8F0;
+  --green: #20b716;
+  --error: #ee2d6e;
+  --red: #d9185f;
+  --black: #000000;
+  --white: #ffffff;
+  --blue: #1877f2;
+  --blue-light: #4285f4;
+  --gray: #e2e8f0;
 }
 
-p{
-  margin:0;
+p {
+  margin: 0;
 }
 
-.moreVideos{
+.moreVideos {
   display: flex;
 }
 
-.moreVideos:hover{
+.moreVideos:hover {
   display: none;
 }
-
-

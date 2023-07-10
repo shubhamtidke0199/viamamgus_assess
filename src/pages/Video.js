@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ReactPlayer from "react-player/lazy";
 import { videoUrls } from "../services/videourls";
 
@@ -11,7 +11,7 @@ export default function Video() {
 
   let moreVideos = {
     margin: "5rem",
-    display:  "flex" ,
+    display: "flex",
     gap: "2rem",
     width: "80%",
     overflowX: "scroll",
@@ -24,7 +24,7 @@ export default function Video() {
     cursor: "pointer",
   };
 
-  const dummyDiv = {width: "100%" ,height:'10rem',color:'#fff'}
+  const dummyDiv = { width: "100%", height: "10rem", color: "#fff" };
 
   const handleMouseEnter = () => {
     setShowThumbnail(true);
@@ -41,7 +41,7 @@ export default function Video() {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
-        backgroundColor:'#f9edcc',
+        backgroundColor: "#f9edcc",
         height: "100vh",
       }}
     >
@@ -61,19 +61,25 @@ export default function Video() {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
-        {showThumbnail? videoUrls.map((video) => {
-          return (
-            <img
-              key={video.id}
-              style={thumbnail}
-              src={video.thumbnail}
-              alt="thumbnail"
-              onClick={() => {
-                setUrl(video.url);
-              }}
-            />
-          );
-        }):<div style={dummyDiv} onMouseEnter={handleMouseEnter}>Dummt text</div>}
+        {showThumbnail ? (
+          videoUrls.map((video) => {
+            return (
+              <img
+                key={video.id}
+                style={thumbnail}
+                src={video.thumbnail}
+                alt="thumbnail"
+                onClick={() => {
+                  setUrl(video.url);
+                }}
+              />
+            );
+          })
+        ) : (
+          <div style={dummyDiv} onMouseEnter={handleMouseEnter}>
+            Dummt text
+          </div>
+        )}
       </div>
     </div>
   );

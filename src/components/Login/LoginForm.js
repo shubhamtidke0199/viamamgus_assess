@@ -5,7 +5,6 @@ import Button from "./Button";
 import { colors } from "../../constants/colors";
 
 export default function LoginForm() {
-
   // use states
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
