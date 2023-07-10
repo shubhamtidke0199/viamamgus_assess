@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./../../styles/login.module.css";
 import Input from "./Input";
 import Button from "./Button";
 import { colors } from "../../constants/colors";
+import { isEmail } from "../../utils/validation";
 
 export default function LoginForm() {
   // use states
@@ -12,14 +14,21 @@ export default function LoginForm() {
   const [errorMessage, setErrorMessage] = useState("");
   const [passwordError, setPasswordError] = useState(false);
 
+  const navigate = useNavigate();
+
   // handle sign in
   const handleSignin = () => {
     if (email === "") {
       setEmailError(true);
       setErrorMessage("The email field is required");
+    } else if (!isEmail(email)) {
+      setEmailError(true);
+      setErrorMessage("The email must be a valid email address");
     } else if (password === "") {
       setPasswordError(true);
       setErrorMessage("The password field is required");
+    } else {
+      navigate("/video");
     }
   };
 
@@ -87,6 +96,9 @@ export default function LoginForm() {
           {/* SOCIAL MEDIA BUTTONS */}
           <Button
             text="CONTINUE WITH GOOGLE"
+            onClick={() => {
+              navigate("/video");
+            }}
             styles={{
               backgroundColor: colors.bluelight,
               font: "normal normal 600 1.4rem/1.8rem Josefin Sans",
@@ -95,6 +107,9 @@ export default function LoginForm() {
           />
           <Button
             text="CONTINUE WITH FACEBOOK"
+            onClick={() => {
+              navigate("/video");
+            }}
             styles={{
               backgroundColor: colors.blue,
               font: "normal normal 600 1.4rem/1.8rem Josefin Sans",

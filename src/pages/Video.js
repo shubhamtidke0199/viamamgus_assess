@@ -1,19 +1,33 @@
 import { useState } from "react";
 import ReactPlayer from "react-player/lazy";
 import { videoUrls } from "../services/videourls";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { useNavigate } from "react-router-dom";
 
 export default function Video() {
   const [showThumbnail, setShowThumbnail] = useState(true);
+  const navigate = useNavigate();
 
   const [url, setUrl] = useState(
     "https://www.youtube.com/watch?v=o3x7IMeW1C0&list=RDo3x7IMeW1C0&start_radio=1"
   );
 
-  let moreVideos = {
+  const videoContainer = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    backgroundColor: "#f9edcc",
+    height: "100vh",
+  };
+
+  const moreVideos = {
     margin: "5rem",
     display: "flex",
-    gap: "2rem",
-    width: "80%",
+    gap: "1rem",
+    width: "90%",
+    overflowY: "hidden",
     overflowX: "scroll",
   };
 
@@ -22,6 +36,23 @@ export default function Video() {
     width: "10rem",
     height: "10rem",
     cursor: "pointer",
+  };
+
+  const navButton = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "1rem",
+    cursor: "pointer",
+    fontSize: "2rem",
+  };
+
+  const navBtnContainer = {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "80%",
+    rowGap: "1rem",
   };
 
   const dummyDiv = { width: "100%", height: "10rem", color: "#fff" };
@@ -34,25 +65,24 @@ export default function Video() {
     setShowThumbnail(false);
   };
 
+  const handleBack = () => {
+    navigate("/");
+  };
+
+  const handleForward = () => {
+    navigate("/date");
+  };
+
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        backgroundColor: "#f9edcc",
-        height: "100vh",
-      }}
-    >
-      <h1>Video</h1>
+    <div style={videoContainer}>
+      <h1>Challenge 2 - Video</h1>
       <ReactPlayer
         url={url}
         light={true}
         playing={true}
         controls={true}
         width={"1080px"}
-        heigh={"720px"}
+        
       />
 
       <div
@@ -80,6 +110,19 @@ export default function Video() {
             Dummt text
           </div>
         )}
+      </div>
+      {/* Navigation Buttons */}
+      <div style={navBtnContainer}>
+        <div style={navButton} onClick={handleBack}>
+          <ArrowBackIcon style={{ fontSize: "4rem" }} />
+          <span style={{ textDecoration: "underline" }}>
+            Back to challenge 1
+          </span>
+        </div>
+        <div style={navButton} onClick={handleForward}>
+          <ArrowForwardIcon style={{ fontSize: "4rem" }} />
+          <span style={{ textDecoration: "underline" }}>Go To challenge 3</span>
+        </div>
       </div>
     </div>
   );
